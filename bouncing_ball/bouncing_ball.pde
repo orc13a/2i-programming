@@ -15,7 +15,12 @@ float ballX = 425, ballY = 400; // ball start x- og y-koordinater
 float boxHitX = 0; // Om bolden har ramt en af kassen vægge (højre eller venstre væg). | boxHitX = 1; betyder venstre væg og 0 for højre væg 
 float boxHitY = 0; // Om bolden har ramt en af kassen vægge (top eller bunden væg). | boxHitY = 1; betyder bunden væg og 0 for toppen
 
-float ballSpeed = 2; // Hvor hurtigt bolden skal bevæge sig.
+// Hvis vi vil have bolden til at skifte retning med 90 grader hver gang
+//float ballSpeed = 2; // Hvor hurtigt bolden skal bevæge sig.
+
+// Hvis vi vil have bolden til at skifte retning i tilfældige grader.
+float ballSpeedX = random(2, 10); // Hvor hurtigt bolden skal bevæge sig.
+float ballSpeedY = random(2, 10); // Hvor hurtigt bolden skal bevæge sig.
 
 float wallSpeed = 0.5; // Hvor hurtugt væggene skal forminske.
 
@@ -32,17 +37,29 @@ void draw() {
   // For bolden retning, hvis bolden rammer højre væg skal boldens x - med ballSpeed og hvis bolden har ramt bunden så skal boldens y - med ballSpeed  
   
   if(boxHitX == 0 && boxHitY == 0) { // Hvis bolden ikke har ramt ingen af væggene så skal den bare rygge en start retning.
-    ballX = ballX + ballSpeed;
-    ballY = ballY + ballSpeed;
+    //ballX = ballX + ballSpeed;
+    //ballY = ballY + ballSpeed;
+    
+    ballX = ballX + ballSpeedX;
+    ballY = ballY + ballSpeedY;
   } else if(boxHitX == 1 && boxHitY == 0) { // Hvis bolden har ramt højre væg
-    ballX = ballX - ballSpeed;
-    ballY = ballY + ballSpeed;
+    //ballX = ballX - ballSpeed;
+    //ballY = ballY + ballSpeed;
+    
+    ballX = ballX - ballSpeedX;
+    ballY = ballY + ballSpeedY;
   } else if(boxHitX == 1 && boxHitY == 1) { // Hvis bolden har ramt højre væg og bunden
-    ballX = ballX - ballSpeed;
-    ballY = ballY - ballSpeed;
+    //ballX = ballX - ballSpeed;
+    //ballY = ballY - ballSpeed;
+    
+    ballX = ballX - ballSpeedX;
+    ballY = ballY - ballSpeedY;
   } else if(boxHitX == 0 && boxHitY == 1) { // Hvis bolden har ramt venstre væg 
-    ballX = ballX + ballSpeed;
-    ballY = ballY - ballSpeed;
+    //ballX = ballX + ballSpeed;
+    //ballY = ballY - ballSpeed;
+  
+    ballX = ballX + ballSpeedX;
+    ballY = ballY - ballSpeedY;
   }
   
   // Hvad gør dette: ((width - boxW) / 2) + boxW) - (ballD / 2)?
