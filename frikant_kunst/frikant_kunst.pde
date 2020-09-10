@@ -5,7 +5,7 @@ void setup() {
 void draw() {
   clear();
   
-  rectDraw(18, random(5,20));
+  //rectDraw(18, random(5,20));
 }
 /*
 void rectDraw(int y, float size) {
