@@ -1,21 +1,29 @@
+// Oliver C - Kerm/It - HCØL
+
 void setup() {
  size(400, 400);
+ rectMode(CENTER);
+ frameRate(20);
 }
 
 void draw() {
   clear();
+  background(255);
   
-  //rectDraw(18, random(5,20));
+  noStroke();
+  fill(0, 0, 255);
+  rects(18);
 }
-/*
-void rectDraw(int y, float size) {
-  int AmonutOfY = 0;
-  while(AmonutOfY != y) {
-    for(int i=20; i <= 360; i++) {
+
+void rects(int y) {
+  int amonutOfY = 0;
+  while(amonutOfY != y) {
+    for(int i=30; i < 380; i++) {
       if(i % 20 == 0) {
-        rect(i, ((20 * AmonutOfY)+20), size, size);
+        float ranS = random(10,20);
+        rect(i, ((20 * amonutOfY) + 30), ranS, ranS);
       }
     }
-    AmonutOfY++;
+    amonutOfY++;
   }
-}*/
+}
