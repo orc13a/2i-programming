@@ -6,7 +6,7 @@
 
 //OPGAVE: lav arrays, variabler til at gemme terningkast og fordeling af terningekast
 
-int antalKast = 60;
+int antalKast = 80;
 
 int[] alleKast = new int[antalKast];
 
@@ -91,7 +91,7 @@ void tegnFordeling() {
       rect(0, (700 - (numberOfOnes * 10)), 50, (10 * numberOfOnes));
     }
     if(numberOfTwos != 0) {
-      text(numberOfTwos + " Stk", 65, (670 - (10 * numberOfTwos)));
+      text(numberOfTwos + " Stk", 63, (670 - (10 * numberOfTwos)));
       rect(53, (700 - (numberOfTwos * 10)), 50, (10 * numberOfTwos));
     }
     if(numberOfThrees != 0) {
@@ -99,16 +99,16 @@ void tegnFordeling() {
       rect(106, (700 - (numberOfThrees * 10)), 50, (10 * numberOfThrees));
     }
     if(numberOfFour != 0) {
-      text(numberOfFour + " Stk", 165, (670 - (10 * numberOfFour)));
-      rect(212, (700 - (numberOfFour * 10)), 50, (10 * numberOfFour));
+      text(numberOfFour + " Stk", 168, (670 - (10 * numberOfFour)));
+      rect(159, (700 - (numberOfFour * 10)), 50, (10 * numberOfFour));
     }
     if(numberOfFive != 0) {
-      text(numberOfFive + " Stk", 215, (670 - (10 * numberOfFive)));
-      rect(265, (700 - (numberOfFive * 10)), 50, (10 * numberOfFive));
+      text(numberOfFive + " Stk", 222, (670 - (10 * numberOfFive)));
+      rect(212, (700 - (numberOfFive * 10)), 50, (10 * numberOfFive));
     }
     if(numberOfSixs != 0) {
-      text(numberOfSixs + " Stk", 265, (670 - (10 * numberOfSixs)));
-      rect(318, (700 - (numberOfSixs * 10)), 50, (10 * numberOfSixs));
+      text(numberOfSixs + " Stk", 275, (670 - (10 * numberOfSixs)));
+      rect(265, (700 - (numberOfSixs * 10)), 50, (10 * numberOfSixs));
     }
   }
 }
@@ -134,7 +134,6 @@ void keyPressed() {
   
   stroke(255);
   line(0, 700, 325, 700);
-  line(0, 690, 325, 690);
   
   
   noStroke();
