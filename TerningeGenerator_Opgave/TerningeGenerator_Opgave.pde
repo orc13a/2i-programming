@@ -128,6 +128,7 @@ void udskrivKast() {
       }
     }
   }
+  text("Du har " + (antalKast - brugtKast) + " kast tilbage", 50, 125);
 }
 
 
@@ -136,7 +137,6 @@ void udskrivKast() {
 void keyPressed() {  
   clear();
   text("TRYK på 'k' FOR AT KASTE / OG 's' FOR AT SLETTE", 50, 50);
-  text("Du har " + (antalKast - brugtKast) + " kast tilbage", 50, 125);
   stroke(255);
   line(0, 700, 314, 700);
   
