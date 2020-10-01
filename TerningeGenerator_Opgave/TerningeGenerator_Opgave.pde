@@ -24,12 +24,17 @@ void setup() {
   clear();
   text("TRYK på 'k' FOR AT KASTE", 50, 50);
   text("Fordeling af terningekast", 50, 750);
+  stroke(255);
+  line(0, 700, 314, 700);
+  
+  noStroke();
+  text("Fordeling af terningekast", 50, 750);
   text("1'er", 10, 720);
   text("2'er", 68, 720);
   text("3'er", 118, 720);
-  text("4'er", 170, 720);
-  text("5'er", 218, 720);
-  text("6'er", 270, 720);
+  text("4'er", 172, 720);
+  text("5'er", 225, 720);
+  text("6'er", 280, 720);
 }
 
 void draw() {
@@ -131,19 +136,18 @@ void udskrivKast() {
 void keyPressed() {  
   clear();
   text("TRYK på 'k' FOR AT KASTE / OG 's' FOR AT SLETTE", 50, 50);
-  
+  text("Du har " + (antalKast - brugtKast) + " kast tilbage", 50, 125);
   stroke(255);
-  line(0, 700, 325, 700);
-  
+  line(0, 700, 314, 700);
   
   noStroke();
   text("Fordeling af terningekast", 50, 750);
   text("1'er", 10, 720);
   text("2'er", 68, 720);
   text("3'er", 118, 720);
-  text("4'er", 170, 720);
-  text("5'er", 218, 720);
-  text("6'er", 270, 720);
+  text("4'er", 172, 720);
+  text("5'er", 225, 720);
+  text("6'er", 280, 720);
 
   if (key=='k') {
     //OPGAVE:  lav manglende funktion der laver 'terningekast'. 
