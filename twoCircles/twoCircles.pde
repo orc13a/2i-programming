@@ -4,8 +4,11 @@ float[] coorArr = new float[amountOfIndex];
 void setup() {
   size(800, 800);
   
+  // Push koordinaterne ind i arrayen
   for(int i = 0; i < coorArr.length; i++) {
+    // For x koordinat
     coorArr[i] = random(0, width);
+    
     // For y koordinat
     if(i % 2 == 0) {
       coorArr[i] = random(0, height);
@@ -21,9 +24,9 @@ void setup() {
 }
 
 // Funktionen
-void circles(float cx1, float cy1, float cr1, float cx2, float cy2, float cr2) {
-  circle(cx1, cy1, cr1);
-  circle(cx2, cy2, cr2);
+void circles(float[] array) {
+  circle(array[0], array[1], array[2]);
+  circle(array[3], array[4], array[5]);
 }
 
 void draw() {
@@ -31,5 +34,5 @@ void draw() {
   background(255);
   
   fill(0);
-  circles(coorArr[0], coorArr[1], coorArr[2], coorArr[3], coorArr[4], coorArr[5]);
+  circles(coorArr);
 }
