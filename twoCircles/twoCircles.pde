@@ -22,5 +22,6 @@ void keyPressed() {
   clear();
   background(255);
   
+  noStroke();
   circles(coorArr);
 }
