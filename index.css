@@ -1,0 +1,48 @@
+/*
+font-family: 'Montserrat', sans-serif;
+*/
+
+body, button, input, a, textarea {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    margin: 0px;
+}
+
+.nav {
+    padding: 15px;
+    background-color: #9399FF;
+    color: white;
+    box-shadow: 0px 7px 24px rgb(0, 0, 0, 0.15);
+    margin-bottom: 50px;
+}
+
+.nav > div > div {
+    display: inline-block;
+}
+
+.pageHeader {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.userNameNav > a{
+    color: white;
+    text-decoration: none;
+}
+
+.userNameNav > a:hover {
+    text-decoration: underline;
+}
+
+.repoHeader {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: -9px -9px 24px rgba(121, 121, 121, 0.15), 9px 9px 24px rgba(83, 83, 83, 0.15);
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
