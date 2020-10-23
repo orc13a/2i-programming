@@ -20,7 +20,7 @@ request.onload = function () {
         if (element.type === 'dir') {
             var nameSplit = element.name.split('_');
             var nameJoin = nameSplit.join(' ');
-            treesContainerOutput.innerHTML += '<div class="tree shadow"><a href="' + element.html_url + '">' + nameJoin + '</a></div>';
+            treesContainerOutput.innerHTML += '<div onclick="console.log(\'Hello\');" class="tree shadow"><a href="' + element.html_url + '">' + nameJoin + '</a></div>';
         }
     });
 }

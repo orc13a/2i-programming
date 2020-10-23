@@ -13,7 +13,7 @@ request.onload = function () {
     if (request.status === 403) {
         document.getElementById('contentContainer').style.display = 'none';
         var httpError = document.getElementById('httpError');
-        httpError.innerHTML = request.status + data.message;
+        httpError.innerHTML = '<b>' + request.status.toString() + '</b> ' + request.statusText + '<br><br> Prøv igen senere, <a href="https://github.com/orc13a/2i-programming">Klik her</a> for min repo med opgaverne.';
         httpError.style.display = 'block';
     } else {
 
@@ -57,7 +57,7 @@ request.onload = function () {
         var updatedLastTime = updatedLastDate[1].split('Z');
     
         var lastUpdated = document.getElementById('lastUpdated');
-        lastUpdated.innerHTML = '<b>Opdateret:</b> <br>' + updatedLastDate[0] + ', ' + updatedLastTime[0];
+        lastUpdated.innerHTML = '<b>Opdateret:</b> <br>' + updatedLastDate[0] + ' | ' + updatedLastTime[0];
     
         var language = document.getElementById('language');
         language.innerHTML = repo2i[6];
@@ -67,14 +67,14 @@ request.onload = function () {
         var pushedTime = pushedDate[1].split('Z');
     
         var pushed = document.getElementById('pushed');
-        pushed.innerHTML = '<b>Pushed:</b> <br>' + pushedDate[0] + ', ' + pushedTime[0];
+        pushed.innerHTML = '<b>Pushed:</b> <br>' + pushedDate[0] + ' | ' + pushedTime[0];
     
         var createdString = repo2i[8];
         var createdDate = createdString.split('T');
         var createdTime = createdDate[1].split('Z');
     
         var created = document.getElementById('created');
-        created.innerHTML = '<b>Lavet:</b> <br>' + createdDate[0] + ', ' + createdTime[0];
+        created.innerHTML = '<b>Lavet:</b> <br>' + createdDate[0] + ' | ' + createdTime[0];
 
     }
 };
