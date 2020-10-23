@@ -22,7 +22,7 @@ function folderContent(name, url, htmlUrl) {
         var data = JSON.parse(this.response);
         
         data.forEach(element => {
-            document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile"><div class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></div><div class="folderFileDownload"><a href="https://orc13a.github.io/2i-programming/repo.js" download>Download</a></div></div>' 
+            document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile"><div class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></div><div class="folderFileDownload"><a href="'+ element.download_url +'" download>Download</a></div></div>' 
         });
     }
 
