@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oliver Christensen Git page</title>
+    <!-- Setter min github avatar til icon på hjemmesiden -->
+    <link id="favIcon" rel="shortcut icon" href="" type="image/png">
+    <!-- skrift typer -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- css fil -->
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <div class="nav">
         <div class="pageHeader">
-            <div>Oliver Christensen |&nbsp</div><div class="userNameNav"><a id="gitUserName" target="_blank"></a></div>
+            <div>Oliver Christensen |&nbsp</div><div class="userNameNav"><a id="gitUserName" target="_blank"><!-- her er username --></a></div>
         </div>
     </div>
-    <div class="repoHeader">
-        <div><a id="gitRepoName" target="_blank"></a></div>
+    <div id="contentContainer" class="contentContainer">
+        <div class="repoHeaderContainer shadow">
+            <table>
+                <tbody>
+                    <tr class="repoTableHeaderOne">
+                        <td class="repoHeader">
+                            <a id="gitRepoName" target="_blank"><!-- her er repo navnet --></a>
+                        </td>
+                        <td id="defaultBranch" class="repoDefaultBranch">
+                            <!-- Her bliver default branch skrevet -->
+                        </td>
+                        <td id="language" class="repoLanguage">
+                            <!-- Her bliver repo language skrevet -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="lastUpdated" class="RepoLastUpdated">
+                            <!-- Her bliver sidst updateret skrevet -->
+                        </td>
+                        <td id="pushed" class="RepoPushed">
+                            <!-- Her bliver sidst updateret skrevet -->
+                        </td>
+                        <td id="created" class="RepoCreated">
+                            <!-- Her bliver sidst updateret skrevet -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="treesContainer">
+            <!-- Her bliver alle trees 2i programming -->
+        </div>
     </div>
-    <div id="treesContainer">
-        <!-- Her bliver alle trees 2i programming -->
+    <div style="display: none;" id="httpError" class="httpError shadow">
+        <!-- status HTTP error skrevet -->
     </div>
 </body>
 <!-- Linker til JavaScript filerne -->

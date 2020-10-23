@@ -18,9 +18,9 @@ request.onload = function () {
     data.forEach(element => {
         // Hvis det element vi er nået til har et object med navnet type og væriden dir (directory)
         if (element.type === 'dir') {
-            treesContainerOutput.innerHTML += '<div class="tree">';
-            treesContainerOutput.innerHTML += '<a href="' + element.html_url + '">' + element.name + '</a>';
-            treesContainerOutput.innerHTML += '</div>';
+            var nameSplit = element.name.split('_');
+            var nameJoin = nameSplit.join(' ');
+            treesContainerOutput.innerHTML += '<div class="tree shadow"><a href="' + element.html_url + '">' + nameJoin + '</a></div>';
         }
     });
 }
