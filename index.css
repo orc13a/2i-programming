@@ -54,7 +54,7 @@ body {
 
 .repoHeaderContainer {
     border-radius: 10px;
-    padding: 20px;
+    padding: 5px 20px;
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
@@ -77,6 +77,38 @@ table, tr, td, th {
     border-bottom: 1px solid lightgray;
 }
 
+.folderTr {
+    border-top: 1px solid lightgray;
+}
+
+.choosenFolder {
+    font-weight: 700;
+}
+
+.choosenFolder > a {
+    color: black;
+    text-decoration: none;
+}
+
+.choosenFolder > a:hover {
+    text-decoration: underline;
+}
+
+.backBtn {
+    background-color: #9399FF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    line-height: 25px;
+    width: 100px;
+    outline: none;
+}
+
+.backBtn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 24px 3px rgb(0, 0, 0, 0.09);
+}
+
 .repoHeader > a {
     color: black;
     text-decoration: none;
@@ -92,11 +124,17 @@ table, tr, td, th {
     width: 75vw;
     line-height: 25px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid white;
 }
+
+.tree:hover {
+    cursor: pointer;
+    border: 2px solid #9399FF;
+} 
 
 .tree > a {
     color: black;
