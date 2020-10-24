@@ -1,4 +1,5 @@
 // Når man klikker på en af mapperne
+// Parameter navnet på mappen, mappens API url og urls 
 function folderContent(name, url, htmlUrl) {
     window.scrollTo(0, 0);
     // Skriver navnet på mappen over viser den i tabellen
@@ -20,9 +21,10 @@ function folderContent(name, url, htmlUrl) {
     request.onload = function () {
         // Tager resopnse og laver den til JSON (JavaScript Object Notation)
         var data = JSON.parse(this.response);
-        
+        console.log(data);
         data.forEach(element => {
-            document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile"><div class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></div><div class="folderFileDownload"><a href="'+ element.download_url +'" download>Download</a></div></div>' 
+            document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile shadow"><table><tbody><tr><td class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></td><td class="folderFileDownload"><a href="'+ element.download_url +'">Download</a></td></tr></tbody</table></div>';
+            //document.getElementById('test').setAttribute('src', element.download_url);
         });
     }
 
@@ -40,4 +42,7 @@ function folderClose() {
     // Viser alle mapper og skjuler indhold af den valgte
     document.getElementById('treesContainer').style.display = 'block';
     document.getElementById('folderContentContainer').style.display = 'none';
+
+    // Sletter folder content container innerHTML til ingen ting
+    document.getElementById('folderContentContainer').innerHTML = '';
 }

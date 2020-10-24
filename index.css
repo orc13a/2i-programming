@@ -145,3 +145,43 @@ table, tr, td, th {
     text-decoration: underline;
 }
 
+.folderFile {
+    width: 75vw;
+    line-height: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white;
+}
+
+.folderFile > table {
+    width: 100%;
+}
+
+.folderFileName > a {
+    color: black;
+    text-decoration: none;
+}
+
+.folderFileName > a:hover {
+    text-decoration: underline;
+}
+
+.folderFile > div {
+    display: inline-block;
+}
+
+.folderFileDownload {
+    opacity: 0.5;
+    text-align: right;
+}
+
+.folderFileDownload > a {
+    cursor: not-allowed;
+    color: currentColor;
+    display: inline-block;
+    pointer-events: none;
+    text-decoration: none;
+}

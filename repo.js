@@ -10,11 +10,9 @@ let repo2i = [];
 request.onload = function () {
     var data = JSON.parse(this.response);
 
+    // Kigger på om der er fejl og API'en ikke sender OK tilbage
     if (request.status === 403) {
-        document.getElementById('contentContainer').style.display = 'none';
-        var httpError = document.getElementById('httpError');
-        httpError.innerHTML = '<b>' + request.status.toString() + '</b> ' + request.statusText + '<br><br> Prøv igen senere, <a href="https://github.com/orc13a/2i-programming">Klik her</a> for min repo med opgaverne.';
-        httpError.style.display = 'block';
+        httpError(request.status.toString(), request.statusText);
     } else {
 
         data.forEach(element => {

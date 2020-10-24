@@ -14,15 +14,23 @@ request.onload = function () {
     // Tager resopnse og laver den til JSON (JavaScript Object Notation)
     var data = JSON.parse(this.response);
     
-    // Data er en array, så siger vi for hvert element i arrayen. f.eks data[1] osv...
-    data.forEach(element => {
-        // Hvis det element vi er nået til har et object med navnet type og væriden dir (directory)
-        if (element.type === 'dir') {
-            var nameSplit = element.name.split('_');
-            var nameJoin = nameSplit.join(' ');
-            treesContainerOutput.innerHTML += '<div onclick="folderContent(\''+element.name+'\', \''+element.url+'\', \''+element.html_url+'\')" class="tree shadow"><a href="' + element.html_url + '">' + nameJoin + '</a></div>';
-        }
-    });
+    // Kigger på om der er fejl og API'en ikke sender OK tilbage
+    if (request.status === 403) {
+        // Kalder den funktion til at klare fejl. findes i index-scripts.js
+        httpError(request.status.toString(), request.statusText);
+    } else {
+    
+        // Data er en array, så siger vi for hvert element i arrayen. f.eks data[1] osv...
+        data.forEach(element => {
+            // Hvis det element vi er nået til har et object med navnet type og væriden dir (directory)
+            if (element.type === 'dir') {
+                var nameSplit = element.name.split('_');
+                var nameJoin = nameSplit.join(' ');
+                treesContainerOutput.innerHTML += '<div onclick="folderContent(\''+element.name+'\', \''+element.url+'\', \''+element.html_url+'\')" class="tree shadow"><a href="' + element.html_url + '">' + nameJoin + '</a></div>';
+            }
+        });
+
+    }
 }
 
 // Sender den request
