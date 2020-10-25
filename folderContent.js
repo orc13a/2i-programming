@@ -21,11 +21,21 @@ function folderContent(name, url, htmlUrl) {
     request.onload = function () {
         // Tager resopnse og laver den til JSON (JavaScript Object Notation)
         var data = JSON.parse(this.response);
-        console.log(data);
-        data.forEach(element => {
-            document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile shadow"><table><tbody><tr><td class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></td><td class="folderFileDownload"><a href="'+ element.download_url +'">Download</a></td></tr></tbody</table></div>';
-            //document.getElementById('test').setAttribute('src', element.download_url);
-        });
+        
+        document.getElementById('loadingContainer').style.display = 'block';
+        setTimeout(function() {
+            if (request.status !== 200) {
+                window.location.href = "https://orc13a.github.io/2i-programming/";
+            } else {
+                document.getElementById('loadingContainer').style.display = 'none';
+                document.getElementById('contentContainer').style.display = 'block';
+
+                data.forEach(element => {
+                    document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile shadow"><table><tbody><tr><td class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></td><td class="folderFileDownload"><a href="'+ element.download_url +'">Download</a></td></tr></tbody</table></div>';
+                    //document.getElementById('test').setAttribute('src', element.download_url);
+                });
+            }
+        }, 500);
     }
 
     // Sender den request

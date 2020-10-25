@@ -12,6 +12,12 @@ body {
     min-height: 1000px;
 }
 
+#loadingContainer > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .shadow {
     box-shadow: -9px -9px 24px 2px rgba(0, 0, 0, 0.04), 9px 9px 24px 2px rgba(0, 0, 0, 0.09);
 }
@@ -31,6 +37,11 @@ body {
 .pageHeader {
     font-weight: 700;
     font-size: 24px;
+}
+
+.pageHeader > div > a {
+    color: white;
+    text-decoration: none;
 }
 
 .userNameNav > a{
@@ -174,12 +185,12 @@ table, tr, td, th {
 }
 
 .folderFileDownload {
+    cursor: not-allowed;
     opacity: 0.5;
     text-align: right;
 }
 
 .folderFileDownload > a {
-    cursor: not-allowed;
     color: currentColor;
     display: inline-block;
     pointer-events: none;
