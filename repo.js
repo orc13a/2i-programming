@@ -14,6 +14,7 @@ request.onload = function () {
     setTimeout(function() {
         // Kigger på om der er fejl og API'en ikke sender OK tilbage
         if (request.status !== 200) {
+            // Her bruger jeg min funktion til at lave og vise fejlen på hjemmsiden
             httpError(request.status.toString(), request.statusText);
         } else {
             // Ellers viser den indholdet på hjemmesiden
@@ -58,6 +59,7 @@ request.onload = function () {
             defaultBranch.innerHTML = '<b>Default branch:</b> ' + repo2i[7];
         
             // Til at dele den string man får som indeholder tid og dato
+            // Her bruger jeg min funktion til at ændre på tiden og datoen
             var updateTimeAndDate = formatTimeAndDate(repo2i[9]);
         
             // Giver data til html
@@ -69,6 +71,7 @@ request.onload = function () {
             language.innerHTML = repo2i[6];
         
             // Til at dele den string man får som indeholder tid og dato
+            // Her bruger jeg min funktion til at ændre på tiden og datoen
             var pushedTimeAndDate = formatTimeAndDate(repo2i[10]);
         
             // Giver data til html
@@ -76,6 +79,7 @@ request.onload = function () {
             pushed.innerHTML = '<b>Pushed:</b> <br>' + pushedTimeAndDate[0] + ' | ' + pushedTimeAndDate[1];
         
             // Til at dele den string man får som indeholder tid og dato
+            // Her bruger jeg min funktion til at ændre på tiden og datoen
             var createdTimeAndDate = formatTimeAndDate(repo2i[8]);
         
             // Giver data til html
