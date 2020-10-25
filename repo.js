@@ -8,6 +8,7 @@ request.open('GET', 'https://api.github.com/users/orc13a/repos', true);
 let repo2i = [];
 
 request.onload = function () {
+    // Laver den data vi får af API'en til JSON (JavaScript Object Notation)
     var data = JSON.parse(this.response);
 
     setTimeout(function() {
@@ -15,12 +16,13 @@ request.onload = function () {
         if (request.status !== 200) {
             httpError(request.status.toString(), request.statusText);
         } else {
+            // Ellers viser den indholdet på hjemmesiden
             document.getElementById('loadingContainer').style.display = 'none';
             document.getElementById('contentContainer').style.display = 'block';
 
             data.forEach(element => {
                 // Finder 2i-programming ud fra alle mine public repos.
-                if (element.id == 287233432) { // Er 2i-programming repo id
+                if (element.id === 287233432) { // Er 2i-programming repo id
                     repo2i.push(
                         element.id, // 0
                         element.name, // 1
@@ -37,6 +39,7 @@ request.onload = function () {
                 }
             });
         
+            // Sætter siden icon i browseren
             var favIcon = document.getElementById('favIcon');
             favIcon.setAttribute('href', repo2i[5]);
         

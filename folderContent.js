@@ -22,14 +22,21 @@ function folderContent(name, url, htmlUrl) {
         // Tager resopnse og laver den til JSON (JavaScript Object Notation)
         var data = JSON.parse(this.response);
         
+        // Viser vi loading <div>, mens vi venter på svar fra API'en
         document.getElementById('loadingContainer').style.display = 'block';
+
+        // Laver en timeout på 500 millisekunder før funktioen bliver kørt
         setTimeout(function() {
+            // Hvis API'en svarer andet en 200 som er OK
             if (request.status !== 200) {
+                // Så skal den tage os til start siden og vise fejl
                 window.location.href = "https://orc13a.github.io/2i-programming/";
             } else {
+                // Ellers viser den indholdet af siden
                 document.getElementById('loadingContainer').style.display = 'none';
                 document.getElementById('contentContainer').style.display = 'block';
 
+                // For hvert element i objektet vi får af API'en
                 data.forEach(element => {
                     document.getElementById('folderContentContainer').innerHTML += '<div class="folderFile shadow"><table><tbody><tr><td class="folderFileName"><a href="'+ element.html_url +'">'+ element.name +'</a></td><td class="folderFileDownload"><a href="'+ element.download_url +'">Download</a></td></tr></tbody</table></div>';
                     //document.getElementById('test').setAttribute('src', element.download_url);
