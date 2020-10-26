@@ -49,6 +49,57 @@ int antalTegn(String str, String[] array) {
   return antal;
 }
 
+
+// DEL 3
+
+// ♠♣♥♦
+
+String[] alleKort = {"♠ A", "♠ 2", "♠ 3", "♠ 4", "♠ 5", "♠ 6", "♠ 7", "♠ 8", "♠ 9", "♠ 10", "♠ J", "♠ Q", "♠ K", "♣ A", "♣ 2", "♣ 3", "♣ 4", "♣ 5", "♣ 6", "♣ 7", "♣ 8", "♣ 9", "♣ 10",  "♣ J", "♣ Q", "♣ K", "♠ J", "♠ Q", "♠ K", "♥ A", "♥ 2", "♥ 3", "♥ 4", "♥ 5", "♥ 6", "♥ 7", "♥ 8", "♥ 9", "♥ 10", "♥ J", "♥ Q", "♥ K", "♦ A", "♦ 2", "♦ 3", "♦ 4", "♦ 5", "♦ 6", "♦ 7", "♦ 8", "♦ 9", "♦ 10", "♦ J", "♦ Q", "♦ K"};
+String[] trukketKort = new String[alleKort.length];
+int kortTrukket = 0;
+
+
 void setup() {
-  println(antalTegn("JOJO", ordListe));
+  size(400, 400);
+  
+  background(0);
+  text("Klik ' T ' for at trække", 25, 25);
+}
+
+String kortTrak(String[] array) {
+  if (kortTrukket < alleKort.length) {
+    float randomInt = random(1, array.length);
+  
+    trukketKort[kortTrukket] = alleKort[int(randomInt)];
+    kortTrukket++;
+    
+    return alleKort[int(randomInt)];
+  } else {
+    return " !Du skal blande!";
+  }
+}
+
+void blandKort(String[] array) {
+  for(int i = 0; i < array.length; i++) {
+    array[i] = null;
+    kortTrukket++;
+  }
+  println(array);
+}
+
+void draw() {}
+
+void keyPressed() {
+  clear();
+  background(0);
+  text("Klik ' T ' for at trække", 25, 25);
+  text("Klik ' B ' for at blande", 200, 25);
+  
+  if(key == 't') {
+    text("Du trak: " + kortTrak(alleKort), 25, 50);
+  }
+  
+  if(key == 'b') {
+    blandKort(trukketKort);
+  }
 }
