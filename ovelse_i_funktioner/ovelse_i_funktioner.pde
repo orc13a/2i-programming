@@ -17,6 +17,10 @@ int givAldre(int aldre) {
   return aldre;
 }
 
+
+
+
+
 // DEL 2
 
 // DEL 2.1
@@ -48,6 +52,11 @@ int antalTegn(String str, String[] array) {
 
   return antal;
 }
+
+
+
+
+
 
 
 // DEL 3
