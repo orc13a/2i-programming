@@ -86,9 +86,8 @@ String kortTrak(String[] array) {
     int randomInt = randomNumber(alleKort);
     
     for(int i = 0; i < kortTrukket; i++) {
-      while(alleKort[randomInt] != trukketKort[i]) {
+      while(alleKort[randomInt] == trukketKort[i]) {
         randomInt = randomNumber(alleKort);
-        break;
       }
     }
     
