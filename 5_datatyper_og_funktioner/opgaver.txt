@@ -24,7 +24,7 @@ Man dividere x / y og rasternde er svaret
 ############
 
 boolean withinCircle(float x, float y, float a, float b, float r) {
-    if (?? < r) { // Indsaet her!!!
+    if (dist(a, b, x, y) < r) { // Indsaet her!!!
         return true;
     } else {
         return false;
