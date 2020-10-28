@@ -1,0 +1,32 @@
+############
+# Øvelse 1 #
+############
+
+a)
+9 % 3 = 0
+
+b)
+9 % 2 = 1
+
+c)
+9 % 4 = 1
+
+d)
+9 % 5 = 4
+
+
+x % y = z
+
+Man dividere x / y og rasternde er svaret 
+
+############
+# Øvelse 2 #
+############
+
+boolean withinCircle(float x, float y, float a, float b, float r) {
+    if (?? < r) { // Indsaet her!!!
+        return true;
+    } else {
+        return false;
+    }
+}
