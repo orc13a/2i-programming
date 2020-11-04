@@ -38,6 +38,7 @@ int antalTegn(String str, char tegn) {
 }
 
 
+
 // DEL 2.2
 String[] ordListe = {"HAHA", "JOJO", "HAHA", "JOJO", "HAHA", "JOJO", "HAHA", "JOJO", "HAHA", "JOJO", "HAHA", "JOJO", "HAHA", "JOJO", "JOJO", "JOJO"};
 
@@ -64,15 +65,20 @@ int antalTegn(String str, String[] array) {
 // ♠♣♥♦
 
 String[] alleKort = {"♠ A", "♠ 2", "♠ 3", "♠ 4", "♠ 5", "♠ 6", "♠ 7", "♠ 8", "♠ 9", "♠ 10", "♠ J", "♠ Q", "♠ K", "♣ A", "♣ 2", "♣ 3", "♣ 4", "♣ 5", "♣ 6", "♣ 7", "♣ 8", "♣ 9", "♣ 10", "♣ J", "♣ Q", "♣ K", "♠ J", "♠ Q", "♠ K", "♥ A", "♥ 2", "♥ 3", "♥ 4", "♥ 5", "♥ 6", "♥ 7", "♥ 8", "♥ 9", "♥ 10", "♥ J", "♥ Q", "♥ K", "♦ A", "♦ 2", "♦ 3", "♦ 4", "♦ 5", "♦ 6", "♦ 7", "♦ 8", "♦ 9", "♦ 10", "♦ J", "♦ Q", "♦ K"};
+int[] alleKortValues = new int[alleKort.length];
 String[] trukketKort = new String[alleKort.length];
 int kortTrukket = 0;
+boolean cardValueSet = false;
+boolean cardValueConfig = false;
+String cardChoose = "";
 
 
 void setup() {
   size(400, 400);
   
   background(0);
-  text("Klik ' T ' for at trække", 25, 350);
+  text("Klik ' TAB ' for at ændre kort værdi", 25, 350);
+  text("Klik ' SPACE ' for at trække kort", 25, 365);
 }
 
 int randomNumber(String[] array) {
@@ -133,22 +139,78 @@ void visKort(String[] array) {
   }
 }
 
+void chooseKort(String[] array) {
+  for (int i = 0; i < array.length; i++) {
+    if (array[i] != null) {
+      if(i <= 10) {
+        text((i + 1)+ ". [" +array[i]+"]", 25, 25 + (i * 17));
+      }
+      if(i > 10 && i <= 21) {
+        text((i + 1)+ ". [" +array[i]+"]", 100, 25 + (i * 17) - 187);
+      }
+      if(i > 21 && i <= 32) {
+        text((i + 1)+ ". [" +array[i]+"]", 175, 25 + (i * 17) - 374);
+      }
+      if(i > 32 && i <= 43) {
+        text((i + 1)+ ". [" +array[i]+"]", 250, 25 + (i * 17) - 561);
+      }
+      if(i > 43 && i <= 55) {
+        text((i + 1)+ ". [" +array[i]+"]", 325, 25 + (i * 17) - 748);
+      }
+    }
+  }
+}
+
 void draw() {
 }
 
 void keyPressed() {
   clear();
   background(0);
-  text("Klik ' T ' for at trække", 25, 350);
-  text("Klik ' B ' for at blande", 200, 350);
-
-  if (key == 't') {
-    text("Du trak: " + kortTrak(alleKort), 25, 375);
-  }
-
-  if (key == 'b') {
-    blandKort(trukketKort);
+  
+  if(cardValueSet == false) {
+    if(key == ' ') {
+      cardValueSet = true;
+    } else if(key == TAB) {
+      cardValueSet = true;
+      cardValueConfig = true;
+    }
   }
   
-  visKort(trukketKort);
+  if(cardValueSet == true && cardValueConfig == true) {
+    chooseKort(alleKort);
+    text("Vælg et kort, ud fra nummet", 25, 225);
+    
+    if(key == BACKSPACE) {
+      cardChoose = "";
+    }
+    
+    if(int(str(key)) > 0 && int(str(key)) <= 9 && cardChoose.length() < 2) {
+      cardChoose = cardChoose += str(key);
+      text("Kort nr: "+cardChoose, 25, 250);
+      text("[ENTER] for at vælge", 25, 265);
+    } else if(cardChoose.length() != 0) {
+      text("Kort nr: "+cardChoose, 25, 250);
+    }
+    
+    if(cardChoose.length() == 0) {
+      text("Kort nr: - Skriv tal -", 25, 250);
+    }
+  }
+  
+  if(cardValueSet == true && cardValueConfig == false) {
+    text("Klik ' T ' for at trække", 25, 350);
+    text("Klik ' B ' for at blande", 200, 350);
+  
+    if (key == 't') {
+      text("Du trak: " + kortTrak(alleKort), 25, 375);
+    }
+  
+    if (key == 'b') {
+      blandKort(trukketKort);
+    }
+    
+    visKort(trukketKort);
+  }
+  
 }
