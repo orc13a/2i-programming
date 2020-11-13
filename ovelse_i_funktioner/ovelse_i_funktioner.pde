@@ -70,7 +70,9 @@ String[] trukketKort = new String[alleKort.length];
 int kortTrukket = 0;
 boolean cardValueSet = false;
 boolean cardValueConfig = false;
+boolean cardEditCheck = false;
 String cardChoose = "";
+int cardEdit = 0;
 
 
 void setup() {
@@ -161,6 +163,14 @@ void chooseKort(String[] array) {
   }
 }
 
+void addCardValue() {
+  if(cardValueSet == true && cardValueConfig == true) {
+    if(key == ENTER && cardEdit != 0 && cardEditCheck == true) {
+      
+    }
+  }
+}
+
 void draw() {
 }
 
@@ -179,13 +189,14 @@ void keyPressed() {
   
   if(cardValueSet == true && cardValueConfig == true) {
     chooseKort(alleKort);
+    addCardValue();
     text("Vælg et kort, ud fra nummet", 25, 225);
     
     if(key == BACKSPACE) {
       cardChoose = "";
     }
     
-    if(int(str(key)) > 0 && int(str(key)) <= 9 && cardChoose.length() < 2) {
+    if(int(str(key)) > 0 && int(str(key)) <= 9 && cardChoose.length() < 2 && cardEditCheck == false) {
       cardChoose = cardChoose += str(key);
       text("Kort nr: "+cardChoose, 25, 250);
       text("[ENTER] for at vælge", 25, 265);
@@ -193,8 +204,22 @@ void keyPressed() {
       text("Kort nr: "+cardChoose, 25, 250);
     }
     
-    if(cardChoose.length() == 0) {
+    if(cardChoose.length() == 0 && cardEditCheck == false) {
       text("Kort nr: - Skriv tal -", 25, 250);
+    }
+    
+    if(key == ENTER && cardEditCheck == false) {
+      cardEdit = int(cardChoose);
+      cardEditCheck = true;
+      cardChoose = "";
+    }
+    
+    if(cardEditCheck == true) {
+      if(int(str(key)) > 0 && int(str(key)) <= 9) {
+        cardChoose = cardChoose += str(key);
+        text("Kort værdi: "+cardChoose, 25, 250);
+        text("[ENTER] for at gemme", 25, 265);
+      }
     }
   }
   
