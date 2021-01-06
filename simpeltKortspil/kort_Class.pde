@@ -11,8 +11,12 @@ class Kort {
   // Metoder
   void display() {
     fill(255);
-    rect(width/2, height/2, 200, 200, 10, 10, 10, 10);
+    rect(width/2, height/2, 150, 200, 10, 10, 10, 10);
     fill(0);
-    text(name, width/2, height/2);
+    textSize(14);
+    textAlign(LEFT);
+    text(name, 238, 225);
+    textAlign(RIGHT);
+    text(name, 360, 385);
   }
 }
