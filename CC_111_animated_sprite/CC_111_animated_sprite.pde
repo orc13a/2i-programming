@@ -34,7 +34,7 @@ void setup() {
   }
 
   for (int i = 0; i < 5; i++) {
-    horses.add(new Sprite(animation, 0, i * 75, random(0.1, 0.4)));
+    horses.add(new Sprite(animation, 0, i * 75, random(1, 1.4)));
   }
 }
 

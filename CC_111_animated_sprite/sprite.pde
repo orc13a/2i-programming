@@ -29,7 +29,7 @@ class Sprite {
 
   void animate() {
     index += speed;
-    x += speed * 15;
+    x += speed * 7;
 
     if (x > width) {
       x = -w;
