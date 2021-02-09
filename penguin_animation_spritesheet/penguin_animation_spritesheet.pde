@@ -1,13 +1,3 @@
-// Daniel Shiffman
-// http://youtube.com/thecodingtrain
-// https://thecodingtrain.com/CodingChallenges/111-animated-sprite.html
-
-// Horse Spritesheet from
-// https://opengameart.org/content/2d-platformer-art-assets-from-horse-of-spring
-
-// Animated Sprite
-// https://youtu.be/3noMeuufLZY
-
 PImage spritesheet;
 JSONObject spritedata;
 
