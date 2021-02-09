@@ -13,14 +13,14 @@ JSONObject spritedata;
 
 ArrayList<PImage> animation;
 
-ArrayList<Sprite> horses;
+ArrayList<Sprite> penguins;
 
 void setup() {
   size(640, 480);
   animation = new ArrayList<PImage>();
-  horses = new ArrayList<Sprite>();
-  spritedata = loadJSONObject("horse/horse.json");
-  spritesheet = loadImage("horse/horse.png");
+  penguins = new ArrayList<Sprite>();
+  spritedata = loadJSONObject("penguin/penguin.json");
+  spritesheet = loadImage("penguin/penguin.png");
   JSONArray frames = spritedata.getJSONArray("frames");
   for (int i = 0; i < frames.size(); i++) {
     JSONObject frame = frames.getJSONObject(i);
@@ -34,16 +34,16 @@ void setup() {
   }
 
   for (int i = 0; i < 5; i++) {
-    horses.add(new Sprite(animation, 0, i * 75, random(1, 1.4)));
+    penguins.add(new Sprite(animation, 0, i * 75, random(1, 1.4)));
   }
 }
 
 void draw() {
   background(0);
 
-  for (Sprite horse: horses) {
-    horse.show();
-    horse.animate();
+  for (Sprite penguin: penguins) {
+    penguin.show();
+    penguin.animate();
   }
 
   // image(animation[frameCount % animation.length], 0, 0);
