@@ -5,8 +5,12 @@ ArrayList<PImage> animation;
 
 ArrayList<Sprite> penguins;
 
-void setup() {
+public void settings() {
   size(640, 480);
+}
+
+void setup() {
+  //size(640, 480);
   animation = new ArrayList<PImage>();
   penguins = new ArrayList<Sprite>();
   spritedata = loadJSONObject("penguin/penguin.json");
