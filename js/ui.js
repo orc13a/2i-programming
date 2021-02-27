@@ -1,8 +1,6 @@
-window.onload = runFetchStartup();
 let f;
-console.log(f);
-async function runFetchStartup() {
-    const ff = await fetchStartup();
-    f = ff;
+
+async function test() {
+    
 }
-console.log( f);
+test();
