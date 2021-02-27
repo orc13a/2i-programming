@@ -9,7 +9,7 @@ function fetchStartup() {
         if (res.status === 200) {
             return res.json();
         } else {
-            throw new Error('Something went wrong on api server!');
+            throw new Error(`${res.status} - ${res.statusText}`);
         }
     }).then(data => {
         allData.push(data);
@@ -22,7 +22,7 @@ function fetchStartup() {
         if (res.status === 200) {
             return res.json();
         } else {
-            throw new Error('Something went wrong on api server!');
+            throw new Error(`${res.status} - ${res.statusText}`);
         }
     }).then(data => {
         allData.push(data);
@@ -30,7 +30,9 @@ function fetchStartup() {
         console.error(err);
     });
     
-    return new Promise(resolve => {
+    /*return new Promise(resolve => {
         resolve(allData);
-    });
+    });*/
+
+    return allData;
 }
