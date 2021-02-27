@@ -1,9 +1,13 @@
 function fetchStartup() {
-    var allData = [];
+    let fetchedData = {
+        user: {}
+    }
+    let branches = [];
 
     const userReq = new Request('https://api.github.com/users/orc13a');
-    const branchesReq = new Request('https://api.github.com/repos/orc13a/2i-programming/branches');
-
+    const allBranchesReq = new Request('https://api.github.com/repos/orc13a/2i-programming/branches');
+    
+    // Get user data
     fetch(userReq)
     .then(res => {
         if (res.status === 200) {
@@ -12,12 +16,13 @@ function fetchStartup() {
             throw new Error(`${res.status} - ${res.statusText}`);
         }
     }).then(data => {
-        allData.push(data);
+        fetchedData.user = data;
     }).catch(err => {
         console.error(err);
     });
     
-    fetch(branchesReq)
+    // Get all branch names
+    fetch(allBranchesReq)
     .then(res => {
         if (res.status === 200) {
             return res.json();
@@ -25,7 +30,9 @@ function fetchStartup() {
             throw new Error(`${res.status} - ${res.statusText}`);
         }
     }).then(data => {
-        allData.push(data);
+        data.forEach(obj => {
+            branches.push(new Branch(obj.name));
+        });
     }).catch(err => {
         console.error(err);
     });
@@ -34,5 +41,6 @@ function fetchStartup() {
         resolve(allData);
     });*/
 
-    return allData;
+    fetchedData.branches = branches;
+    return fetchedData;
 }
