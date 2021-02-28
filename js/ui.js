@@ -1,4 +1,6 @@
-async function data() {
-    const result = await fetchStartup();
+function data() {
+    fetchStartup().then(results => {
+        
+    });
 }
 data();

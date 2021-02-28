@@ -13,4 +13,8 @@ class Branch {
         
         document.getElementById(container).innerHTML += htmlOutput;
     }
+
+    getBranch() {
+        var url = `https://api.github.com/repos/orc13a/2i-programming/branches/${this.name}`;
+    }
 }
