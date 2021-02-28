@@ -28,8 +28,8 @@ class Branch {
         const branchReq = await fetch(`https://api.github.com/repos/orc13a/2i-programming/branches/${this.name}`);
         const treeReq = await fetch(`https://api.github.com/repos/orc13a/2i-programming/git/trees/${this.name}`);
 
-        const branchJson = branchReq.json();
-        const treeJson = treeReq.json();
+        const branchJson = await branchReq.json();
+        const treeJson = await treeReq.json();
 
         return {
             fetchBranch: branchJson,
@@ -39,7 +39,6 @@ class Branch {
 
     getDetails() {
         this.fetchDetails().then(results => {
-            console.log(results);
             this.branch = results.fetchBranch;
             this.tree = results.fetchTree;
         });
