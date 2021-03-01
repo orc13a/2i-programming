@@ -54,10 +54,14 @@ repoInfoBtn.addEventListener('click', () => {
     }
 });
 
+let idMatch = ['svgOpenRepo', 'svgOpenRepoPath', 'repoInfoBtn', 'repoInfoPopup'];
+
 window.addEventListener('click', (event) => {
-    if (popupContainer.style.display != 'none' && event.target.id != ('svgOpenRepo' || 'svgOpenRepoPath')) {
-        svgOpen.style.display = 'block';
-        svgClose.style.display = 'none';
-        popupContainer.style.display = 'none';
+    if (popupContainer.style.display != 'none') {
+        if (idMatch.includes(event.target.id) === false) {
+            svgOpen.style.display = 'block';
+            svgClose.style.display = 'none';
+            popupContainer.style.display = 'none';
+        }
     }
 });
