@@ -34,10 +34,10 @@ function data() {
         repoName.innerHTML = results['repo'].name;
 
         repoDefaultBranch.innerHTML = results['repo'].default_branch;
-    });
 
-    pageLoading.style.display = 'none';
-    pageContent.style.display = 'block';
+        pageLoading.style.display = 'none';
+        pageContent.style.display = 'block';
+    });
 }
 data();
 
@@ -48,6 +48,14 @@ repoInfoBtn.addEventListener('click', () => {
         svgClose.style.display = 'block';
         popupContainer.style.display = 'inline-block';
     } else {
+        svgOpen.style.display = 'block';
+        svgClose.style.display = 'none';
+        popupContainer.style.display = 'none';
+    }
+});
+
+window.addEventListener('click', (event) => {
+    if (popupContainer.style.display != 'none' && event.target.id != ('svgOpenRepo' || 'svgOpenRepoPath')) {
         svgOpen.style.display = 'block';
         svgClose.style.display = 'none';
         popupContainer.style.display = 'none';

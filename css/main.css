@@ -74,20 +74,34 @@ header div {
 .bcContainer {
     text-align: center;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 #bc {
     display: inline-block;
     text-align: left;
-    width: 90%;
+    /* padding: 25px; */
+    width: 969px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    #bc {
+        width: 650px;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    #bc {
+        width: 320px;
+    }
 }
 
 .branchContainer {
     display: inline-block;
     position: relative;
-    margin: 35px;
+    margin: 30px 35px;
 }
 
 .branchName {
