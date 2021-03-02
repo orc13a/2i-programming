@@ -44,3 +44,20 @@ class SpinSpots extends Spin {
     popMatrix();
   }
 }
+
+class InnerRect extends SpinSpots {
+  InnerRect(float x, float y, float s, float d) {
+    super(x, y, s, d);
+  }
+  
+  void display() {
+    fill(0);
+    pushMatrix();
+    translate(x, y);
+    angle += speed;
+    rotate(angle);
+    rect(-dim/2, 0, dim / 3, dim / 3);
+    rect(dim/2, 0, dim / 3, dim / 3);
+    popMatrix();
+  }
+}
