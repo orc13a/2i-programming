@@ -54,10 +54,30 @@ class InnerRect extends SpinSpots {
     fill(0);
     pushMatrix();
     translate(x, y);
-    angle += speed;
+    angle += (speed * 2); // x2 too keep up with the ellipses
     rotate(angle);
     rect(-dim/2, 0, dim / 3, dim / 3);
     rect(dim/2, 0, dim / 3, dim / 3);
+    popMatrix();
+  }
+}
+
+class outerEllipses extends SpinSpots {
+  float angle2 = angle;
+  
+  outerEllipses(float x, float y, float s, float d) {
+    super(x, y, s, d);
+  }
+  
+  void display() {
+    fill(25);
+    pushMatrix();
+    translate(x, y);
+    angle += (speed * 2);
+    angle2 -= (speed * 2);
+    rotate(angle);
+    ellipse(((+dim/2) + dim/2) + dim/6, 0, dim / 3, dim / 3);
+    ellipse(((-dim/2) - dim/2) - dim/6, 0, dim / 3, dim / 3);
     popMatrix();
   }
 }
