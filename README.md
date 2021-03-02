@@ -17,12 +17,12 @@ Et objekt er bygget op på den klasse som den er blevet skabt af. I nogen progra
 ### Pass by reference
 Hvis en funktion har en parameter som vi siger er `n`, så kan man skrive `&` for an `n`. Dermed siger vi til koden at vi skal tage værdien af `n`, men hvis vi ændre værdien af `n` inden i funktionen vil den variable som hedder `n` ude af funktionen også blive ændret.
 
-![alt text]( "Kode eksemple af 'pass by reference'")
+![alt text](https://raw.githubusercontent.com/orc13a/2i-programming/repetitionssp%C3%B8rgsm%C3%A5l-marts-2021/byRef.PNG "Kode eksemple af 'pass by reference'")
 
 ### Pass by value
 Hvis en funktion har en parameter som vi siger er `n`, så kopier den værdien af det variable som bliver givet til funktionen. Hvis funktionen ændre i `n` værdi, vil værdien af det varibale ude af funktionen blive ændret.
 
-![alt text]( "Kode eksemple af 'pass by value'")
+![alt text](https://raw.githubusercontent.com/orc13a/2i-programming/repetitionssp%C3%B8rgsm%C3%A5l-marts-2021/byValue.PNG "Kode eksemple af 'pass by value'")
 
 ---
 Oliver C, 2.i Kerm/It - HCØL
