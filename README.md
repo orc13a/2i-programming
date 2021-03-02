@@ -13,7 +13,7 @@ Et objekt er bygget op på den klasse som den er blevet skabt af. I nogen progra
 ### New
 `New` keyword er et ord som i programmering sproget siger at man skal lave et nyt objekt ud fra den klasse man oplyser efter `New` ordet. 
 
-![alt text](https://raw.githubusercontent.com/orc13a/2i-programming/repetitionssp%C3%B8rgsm%C3%A5l-marts-2021/class.PNG "Kode eksemple af 'pass by reference'")
+![alt text](https://raw.githubusercontent.com/orc13a/2i-programming/repetitionssp%C3%B8rgsm%C3%A5l-marts-2021/class.PNG "Kode eksemple af en klasse og når man bruger klassen til at lave et objekt")
 
 ## Hvad er forkellen på "pass by reference" og "pass by value"
 ### Pass by reference
