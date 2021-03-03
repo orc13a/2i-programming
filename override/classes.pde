@@ -18,7 +18,8 @@ class Spin {
     angle += speed;
     rotate(angle);
     
-    this.displaySpec(); // Denne kalder sub-class'ens ejen displaySpec() og ikke Spin's
+    this.displaySpec(); // Denne kalder sub-class'ens ejen displaySpec() og ikke Spin's.
+                        // Da det er sub-class'en der kalder Spin's display og ikke spin selv.
     
     popMatrix();
   }
