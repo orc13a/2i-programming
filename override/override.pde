@@ -13,9 +13,9 @@ void draw() {
   
   arm.update();
   arm.display();
-  arm.displaySpec();
+  //arm.displaySpec();
   
   spots.update();
   spots.display();
-  spots.displaySpec();
+  //spots.displaySpec();
 }
