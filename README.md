@@ -9,10 +9,14 @@ Som ses på kode eksemplet, så hvis man tilføjer et nyt `brand` så vil man st
 Fordelene ved nedarvning er vel at man ikke skal gentage sin kode mange gange når man laver flere objekter.
 
 ## c.) Hvad betyder polymorfi og hvordan virker det?
+Polymorfi betyder `mange former` og det virker ved at man laver en array liste af objekter, og så kan man gennem loops få dem alle til at udføre de samme ting. Eks hvis man har hund og kat i listen, så kan de begge godt sove()?
 
+Polymorfi er at objekter kan have forskellige former under forskellige omstændigheder. Som ses på billede, vi tilføjer 2 `Brand` objekter til vores `allCars` array. Når `Brand` objekterne kommer ind i arrayet vil de objekter blive set som `Car` objekter. `Brand` objekterne bliver accepteret af arrayet fordi de har `Car` som forældre klasse.
+
+![kode eksemple](/images/q-b.PNG)
 
 ## d.) Nævn "fordele" ved polymorfi?
-
+Det kan gøre koden mere overskueligt at man nemt kan lave et for loop som kan kører igennem alle de biler man har og få dem til at køer. Med Polymorfi behøver vi ikke at lave nogle tjeks på hvilken bil der er.
 
 ###### Gruppe
 Gustav og Oliver C
