@@ -18,5 +18,7 @@ Polymorfi er at objekter kan have forskellige former under forskellige omstændi
 ## d.) Nævn "fordele" ved polymorfi?
 Det kan gøre koden mere overskueligt at man nemt kan lave et for loop som kan kører igennem alle de biler man har og få dem til at køer. Med Polymorfi behøver vi ikke at lave nogle tjeks på hvilken bil der er.
 
+---
+
 #### Gruppe
 Gustav og Oliver C
