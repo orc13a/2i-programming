@@ -1,3 +1,5 @@
+# Spørgsmål om polymorfi
+
 ## a.) Hvad er nedarvning og hvordan fungerer extends?
 Nedarvning (extends) er når man udvider en allerede eksisterende klasse. Den klasse som man laver en nedarvning fra bliver så forældre klassen og dens metoder kan man også kalde fra sub-klassen som er den klasse som er en nedarvning fra forældre klassen.
 
@@ -17,6 +19,35 @@ Polymorfi er at objekter kan have forskellige former under forskellige omstændi
 
 ## d.) Nævn "fordele" ved polymorfi?
 Det kan gøre koden mere overskueligt at man nemt kan lave et for loop som kan kører igennem alle de biler man har og få dem til at køer. Med Polymorfi behøver vi ikke at lave nogle tjeks på hvilken bil der er.
+
+---
+
+# Hvad er de forkellige polymorfi typer?
+
+## hvilke typer polymorfi findes der indenfor oop?
+### Der er fire typer
+
+1. Subtype polymorphism
+1. Parametric polymorphism
+1. Ad hoc polymorphism
+1. Coercion polymorphism
+
+### Subtype polymorphism
+Dette er den mest normale form for polymorfi, det er som vi har brugt endtil videre og er den type polymorfi som der er skrevet om i spørgsmålene ovenover.
+Det når man har et klasse navn, men man kan refere til flere forskellige sub-klasser.
+
+### Parametric polymorphism
+Parametric polymorfi giver specifikt en måde at bruge en funktion til at intregere med flere forskellige typer.
+
+### Ad hoc polymorphism
+Det er når en funktion kan have det samme navn eller symbol man kan gøre forskellige ting.
+Hvis vi bruger `+` som et eksempel. Hvis man plusser to `int` vil man få den samlede sum, som vi kender det fra matematik. Dog hvis man bruger samme `+` funktion men med to `Stings` så vil programmet sætte `String`'ene sammen til en `String`.
+
+### Coercion polymorphism
+Coercion polymorfi bruges til at ændre en type. Det kan eks. ændre en talværdi fra `int` til `float`, og tilbage. Så et objekt's type kan være besluttet når programmet bliver kørt, men en funktion kan virke med andre typer.
+
+## hvilken type polymorfi har i indtil nu anvendt?
+Vi har vel lært om om den alle sammen, men den seneste er mere speciel end de andre, efter der mere indenfor `OOP`.
 
 ---
 
