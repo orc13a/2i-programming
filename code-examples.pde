@@ -1,4 +1,4 @@
-// Spørgsmål a
+// Spørgsmål a --------
 class Car {
     float speed;
 
@@ -19,9 +19,20 @@ class Car {
 class Brand extends Car {
     String brand;
 
-    Brand(String brandName) {
+    Brand(float s, String brandName) {
+        super(s);
         brand = brandName;
-        // Kode
     }
+
+    // Kode
 }
 
+// Spørgsmål c --------
+Car[] allCars = new Car[2];
+
+allCars[0] = new Brand(30, "BMW");
+allCars[1] = new Brand(30, "VOLVO");
+
+for (Car car : allCars) {
+    car.drive();
+}
