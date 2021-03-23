@@ -24,6 +24,7 @@ class Figur {
     
   }
   
+  // 10 - Her er en type vi kan retunere, her retunere vi en color 
   color setColor() {
     return color(random(255), random(255), random(255));
   }
