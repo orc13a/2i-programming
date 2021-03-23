@@ -1,3 +1,5 @@
+// 7 - Her har vi en arrayliste som kan inden holde alle Figur klasser også klasser som er sub-klasser til figur
+//     Dermed bliver alle objekter i denne array set som en figur
 ArrayList<Figur> allFigurs = new ArrayList<Figur>();
 
 // 3, 4 - Vi laver en variable med typen Rect som kan holde Rect objekter
