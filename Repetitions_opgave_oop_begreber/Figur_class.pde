@@ -36,6 +36,7 @@ class Figur {
   }
 }
 
+// 6 - Her der nedarver vi fra Figur klassen og bygger noget ekstra til klassen
 class Rect extends Figur {
   Rect(float x, float y, float size) {
     // Super kalder parent-klassens konstruktør
