@@ -1,7 +1,13 @@
 ArrayList<Figur> allFigurs = new ArrayList<Figur>();
 
+// 3, 4 - Vi laver en variable med typen Rect som kan holde Rect objekter
+Rect firkant;
+
 void setup() {
+  // 1 - Her giver vi firkant et objekt 
+  firkant = new Rect(10, 10, 10);
   
+  allFigurs.add(firkant);
 }
 
 void draw() {

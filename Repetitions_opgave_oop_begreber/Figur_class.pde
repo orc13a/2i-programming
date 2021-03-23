@@ -28,6 +28,7 @@ class Figur {
     return color(random(255), random(255), random(255));
   }
   
+  // 12 - Vi skriver denne metode også her for at sub-klasserne kan override den
   void displayFigur() {
     
   }
@@ -35,9 +36,11 @@ class Figur {
 
 class Rect extends Figur {
   Rect(float x, float y, float size) {
+    // Super kalder parent-klassens konstruktør
     super(x, y, size);
   }
   
+  // 12 - Dette er den metode vi kan override med efter at parent-klassen også har denne metode
   void displayFigur() {
     rect(x, y, size, size);
   }
