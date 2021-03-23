@@ -30,6 +30,11 @@ class Figur {
     return color(random(255), random(255), random(255));
   }
   
+  // 11 - Her har vi en overload af metoden setColor, så hvis man har en bestemt farve så sette figurens farve til det med denne overload version af metoden.
+  color setColor(color newC) {
+    return newC;
+  }
+  
   // 12 - Vi skriver denne metode også her for at sub-klasserne kan override den
   void displayFigur() {
     
