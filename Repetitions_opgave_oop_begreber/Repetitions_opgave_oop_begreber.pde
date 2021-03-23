@@ -4,7 +4,7 @@ ArrayList<Figur> allFigurs = new ArrayList<Figur>();
 Rect firkant;
 
 void setup() {
-  // 1 - Her giver vi firkant et objekt 
+  // 1 - Her giver vi firkant et objekt ud fra Rect sub-klassen til Figur klassen
   firkant = new Rect(10, 10, 10);
   
   allFigurs.add(firkant);
