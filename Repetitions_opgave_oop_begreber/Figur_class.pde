@@ -1,4 +1,5 @@
 class Figur {
+  // 3, 4 - Vi laver vi variabler med typen float og color uden nogen værdi til at starte med
   float x;
   float y;
   float size;
