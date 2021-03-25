@@ -12,7 +12,7 @@ Det er at man kan for eksemple pass et objekt til en funktion og når man så æ
 ### Værdi
 Her der giver man en funktion en data fra en objekt, så vil den data kun blive ændre inde i funktionen. Dog vil objektet ikke blive ændret ud af funktionen.
 
-[GIF af reference og værdi](https://blog.penjee.com/wp-content/uploads/2015/02/pass-by-reference-vs-pass-by-value-animation.gif)
+![GIF af reference og værdi](https://blog.penjee.com/wp-content/uploads/2015/02/pass-by-reference-vs-pass-by-value-animation.gif)
 
 ## 1. Typer
 Typer er det som siger hvad et variable indenholder.
